@@ -52,7 +52,7 @@ body {
   box-shadow: 10px antiquewhite;
 }
 .personal {
-  padding-top: 550px;
+  margin-top: 550px;
   margin-left: -650%;
   /* margin: 20px; */
 }
