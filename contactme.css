@@ -1,0 +1,111 @@
+body {
+  /* background-color: black; */
+  background: black;
+  color: white;
+  align-items: center;
+}
+.hire {
+  text-align: center;
+  margin-left: -700%;
+}
+.contact {
+  padding-left: 0;
+}
+.newslatter {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+}
+
+.newslatter form {
+  width: 300px;
+  max-width: 100%;
+  position: relative;
+}
+
+.newslatter form input:first-child {
+  display: inline-block;
+  width: 100%;
+  padding: 14px 130px 14px 15px;
+  border-radius: 30px;
+}
+
+.newslatter form input:last-child {
+  position: absolute;
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: aqua;
+  color: rgb(254, 63, 63);
+  box-shadow: 0px 0px 5 px #000, 0px 0px 15px #858585;
+}
+
+.newslatter form input:last-child:hover {
+  transition: 0.5s linear;
+  background: rgb(80, 80, 228);
+  margin: 0px;
+  /* the margin adn the padding changes  */
+  padding: 10px;
+  box-shadow: 10px antiquewhite;
+}
+.personal {
+  padding-top: 550px;
+  margin-left: -650%;
+  /* margin: 20px; */
+}
+/* .message form input:last-child {
+  /* margin: 200px; */
+/* padding-top: 30px;
+  border-radius: 50%;
+} */
+.message form input:last-child {
+  position: absolute;
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: aqua;
+  color: white;
+  box-shadow: 0px 0px 5 px #000, 0px 0px 15px #858585;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bubbles {
+  position: relative;
+  display: flex;
+}
+.bubbles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: rgb(85, 85, 236);
+  margin: 0 4px;
+  border-radius: 50%;
+  /* box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px rgb(85, 85, 236), */
+  /* 0 0 100px rgb(85, 85, 236); */
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even) {
+  background: #ff2d75;
+  /* box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #ff2d75, 0 0 100px #ff2d75; */
+}
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 1;
+  }
+}
