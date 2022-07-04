@@ -91,6 +91,8 @@ h1 span:nth-child(12) {
   animation-delay: 6s;
 }
 .home {
+  animation-delay: 6.5s;
+
   padding-left: 500px;
   padding-top: -400px;
 }
