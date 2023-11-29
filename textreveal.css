@@ -88,5 +88,6 @@ h1 span:nth-child(11) {
 }
 h1 span:nth-child(12) {
   padding-top: 200px;
-  animation-delay: 6s;
+  animation-delay: 3s;
 }
+
