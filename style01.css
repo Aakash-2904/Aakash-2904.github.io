@@ -1,3 +1,17 @@
+html {
+  zoom: 0.9; /* Works in Chrome, Edge, Opera */
+}
+
+/* For Firefox (since zoom doesn't work) */
+@supports not (zoom: 0.9) {
+  body {
+    transform: scale(0.9);
+    transform-origin: top left;
+    width: 111.11%; /* 100 / 0.9 to prevent cutoff */
+  }
+}
+
+
 * {
   padding: 0px;
   margin: 0;
@@ -151,16 +165,4 @@ body {
   }
 }
 
-html {
-  zoom: 0.9; /* Works in Chrome, Edge, Opera */
-}
-
-/* For Firefox (since zoom doesn't work) */
-@supports not (zoom: 0.9) {
-  body {
-    transform: scale(0.9);
-    transform-origin: top left;
-    width: 111.11%; /* 100 / 0.9 to prevent cutoff */
-  }
-}
 
