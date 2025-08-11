@@ -91,5 +91,18 @@ h1 span:nth-child(12) {
   animation-delay: 6s;
 }
 .home {
-  padding-left: 800px;
+  position: absolute; /* or 'fixed' if you want it to stay visible even when scrolling */
+  top: 20px;           /* distance from the top */
+  right: 20px;         /* distance from the right */
+  /* color: white; */
+  font-size: 20px;
+  text-decoration: none;
+  /* background: rgba(0, 0, 0, 0.5); optional background for visibility */
+  padding: 8px 12px;
+  border-radius: 5px;
 }
+section {
+  position: relative;
+  height: 100vh; /* full screen */
+}
+
