@@ -10,7 +10,7 @@ window.AK_KB = {
   name: "Aakash Kumar",
   email: "aakash.abudhabi@gmail.com",
   links: {
-    linkedin: "https://linkedin.com/in/aakash-kumar-1a273311a",
+    linkedin: "https://linkedin.com/in/aakash-kumar-chandra-sekhar/",
     github: "https://github.com/aakash-2904",
     scholar: "https://scholar.google.com/citations?user=uOQj6L4AAAAJ",
     resume: "resume.pdf"
