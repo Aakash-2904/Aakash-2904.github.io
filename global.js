@@ -1,4 +1,4 @@
-// ===== GLOBAL.JS — Cursor (image-based), Ocean BG, Neural Particles, Page Transitions =====
+// ===== GLOBAL.JS: Cursor (image-based), Ocean BG, Neural Particles, Page Transitions =====
 
 // ---- CUSTOM AVATAR CURSOR (uses the actual avatar image) ----
 (function() {
