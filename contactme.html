@@ -1,99 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="contactme.css" />
-    <title>contact me</title>
-  </head>
-  <body>
-        <div class="container">
-      <div class="bubbles">
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 21"></span>
-        <span style="--i: 15"></span>
-        <span style="--i: 13"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 33"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 33"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-    <section class="contact" id="contact">
-      <!-- <h1 style="padding-left: 0;
-;"><span style="color: aqua;">HIRE</span> ME !</h1> -->
-<h1 class="hire">HIRE ME </h1>
-      <div class="personal">
-        
-          <!-- <Phone:-</span>+97150907389 -->
-          <h3 style="color: aqua;">Phone number:-</h3> <h4>9047077718</h4>
-          <h3 style="color: aqua;">Email id:-</h3> <h4>aakash.abudhabi@gmail.com</h4>
-          
-  
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Aakash Kumar</title>
+  <link rel="stylesheet" href="global.css"/>
+  <link rel="stylesheet" href="chat/chat.css"/>
+  <style>
+    .contact-wrap { position:relative;z-index:10;max-width:900px;margin:0 auto;padding:6rem 4rem 4rem; }
+    .contact-grid { display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;margin-top:3rem;align-items:start; }
+    .contact-info-card { padding:2rem; }
+    .contact-item { display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--glass-border); }
+    .contact-item:last-child { border-bottom:none; }
+    .contact-icon { font-size:1.4rem;margin-top:0.1rem; }
+    .contact-label { font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;color:var(--cyan);text-transform:uppercase; }
+    .contact-value { font-size:0.9rem;color:var(--text-primary); }
+    .contact-value a { color:var(--cyan);text-decoration:none; }
+    .hire-badge { display:inline-flex;align-items:center;gap:0.5rem;padding:0.45rem 1rem;border-radius:999px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);font-family:var(--font-mono);font-size:0.68rem;color:#22c55e;margin-bottom:1.8rem; }
+    .hire-badge::before { content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:blink 1.5s ease infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+    .form-wrap { display:flex;flex-direction:column;gap:1.2rem; }
+    .form-group { display:flex;flex-direction:column;gap:0.5rem; }
+    .form-label { font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;color:var(--cyan);text-transform:uppercase; }
+    .form-input,.form-textarea { background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:0.8rem 1.1rem;color:var(--text-primary);font-family:var(--font-body);font-size:0.88rem;transition:border-color 0.3s,box-shadow 0.3s;outline:none; }
+    .form-input:focus,.form-textarea:focus { border-color:var(--cyan);box-shadow:0 0 18px rgba(0,229,255,0.1); }
+    .form-textarea { resize:vertical;min-height:130px; }
+    @media(max-width:768px){ .contact-wrap{padding:4rem 1.5rem 2rem} .contact-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">AK<span>.</span></a>
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="ABOUT.html">About</a></li>
+      <li><a href="publications.html">Research</a></li>
+      <li><a href="contactme.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
 
+  <div class="page-content">
+    <div class="contact-wrap">
+      <p class="section-eyebrow reveal">// contact.init()</p>
+      <h1 class="section-heading reveal">Hire <span>Me</span></h1>
+
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="glass-card contact-info-card">
+            <div class="hire-badge">Available for opportunities</div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <p class="contact-label">US Phone</p>
+                <p class="contact-value">+1 617-595-0332</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <div>
+                <p class="contact-label">India Phone</p>
+                <p class="contact-value">+91 9047077718</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <p class="contact-label">Email</p>
+                <p class="contact-value"><a href="mailto:aakash.abudhabi@gmail.com">aakash.abudhabi@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">💼</span>
+              <div>
+                <p class="contact-label">LinkedIn</p>
+                <p class="contact-value"><a href="https://linkedin.com/in/aakash-kumar-1a273311a" target="_blank" rel="noopener">aakash-kumar-1a273311a</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">💻</span>
+              <div>
+                <p class="contact-label">GitHub</p>
+                <p class="contact-value"><a href="https://github.com/aakash-2904" target="_blank" rel="noopener">github.com/aakash-2904</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📚</span>
+              <div>
+                <p class="contact-label">Google Scholar</p>
+                <p class="contact-value"><a href="https://scholar.google.com/citations?user=uOQj6L4AAAAJ" target="_blank" rel="noopener">Google Scholar profile</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <p class="contact-label">Location</p>
+                <p class="contact-value">Boston, MA 🇺🇸</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🎓</span>
+              <div>
+                <p class="contact-label">Current Program</p>
+                <p class="contact-value">MS in AI — Northeastern University</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem;padding:1.5rem;border:1px solid var(--glass-border);border-radius:12px;background:var(--glass)">
+            <p class="section-eyebrow" style="margin-bottom:0.8rem">Open to</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+              <span class="tag-chip">Research Collaboration</span>
+              <span class="tag-chip">ML Engineering</span>
+              <span class="tag-chip">AI Internships</span>
+              <span class="tag-chip">PhD Opportunities</span>
+              <span class="tag-chip">Full-time Roles</span>
+              <span class="tag-chip">Consulting</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.2rem">
+            <a href="resume.pdf" target="_blank" class="btn-glow" style="width:100%;justify-content:center">Download Resume ↗</a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form class="form-wrap" action="https://formspree.io/f/mrgjvnyb" method="POST">
+            <p style="font-family:var(--font-mono);font-size:0.73rem;color:var(--text-muted);margin-bottom:0.3rem">Send a message — I respond within 24 hours.</p>
+            <div class="form-group">
+              <label class="form-label" for="email">Your Email</label>
+              <input class="form-input" type="email" name="email" id="email" placeholder="you@example.com" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <input class="form-input" type="text" name="subject" id="subject" placeholder="Research collaboration / Job opportunity / ..."/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" name="message" id="message" placeholder="Tell me about the opportunity or project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-glow" style="align-self:flex-start;border:none;cursor:none;">Send Message ↗</button>
+          </form>
+        </div>
       </div>
-    </section>
-    <div class="newslatter">
-      <h1>ENTER UR MAIL ID FOR CALLING BACK</h1>
-      <form
-        class="content"
-        action="https://formspree.io/f/mrgjvnyb"
-        method="POST"
-      >
-        <input
-          type="email"
-          name="email"
-          id="mail"
-          placeholder="Enter your email id"
-        />
-                 <h2>Your message:</h2> 
-          <textarea name="message" width="100px"></textarea>
-        </label>
-        <div class="message"></div>
-        
-        <input type="submit" name="submit" value="SUBMIT" />
-      </form>
     </div>
-  </body>
+  </div>
+
+  <footer class="site-footer">
+    <span>© 2026 Aakash Kumar — Boston, MA</span>
+    <span class="foot-links"><a href="https://linkedin.com/in/aakash-kumar-1a273311a" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/aakash-2904" target="_blank" rel="noopener">GitHub</a> · <a href="https://scholar.google.com/citations?user=uOQj6L4AAAAJ" target="_blank" rel="noopener">Scholar</a></span>
+    <span>Let's build something intelligent together.</span>
+  </footer>
+  <script src="global.js"></script>
+  <script src="chat/kb.js"></script>
+  <script src="chat/chat.js"></script>
+</body>
 </html>

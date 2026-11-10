@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <section>
-      <video src="smoke.mp4" autoplay muted></video>
-      <h1>
-        <span>C</span>
-        <span>O</span>
-        <span>D</span>
-        <span>I</span>
-        <span>N</span>
-        <span>G</span>
-        <span>L</span>
-        <span>I</span>
-        <span>F</span>
-        <span>E</span>
-        <span>S</span>
-      </h1>
-      <a class="home" style="color: white" href="Home.html" id="links1">HOME</a>
-  
-    </section>
-  </body>
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aakash Kumar — MS AI @ Northeastern</title>
+  <link rel="stylesheet" href="global.css"/>
+  <link rel="stylesheet" href="chat/chat.css"/>
+  <style>
+    .splash { position:relative;z-index:10;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center; }
+    .splash-eyebrow { font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.4em;color:var(--cyan);text-transform:uppercase;margin-bottom:1.2rem;animation:fadeSlideUp 1s ease both 0.3s; }
+    .splash-title { font-family:var(--font-display);font-size:clamp(3rem,10vw,8rem);font-weight:800;line-height:0.95;color:var(--text-primary);animation:fadeSlideUp 1s ease both 0.5s;letter-spacing:-0.02em; }
+    .splash-title .line-glow { background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .splash-subtitle { font-family:var(--font-mono);font-size:clamp(0.82rem,2vw,1rem);color:var(--text-muted);margin-top:1.5rem;max-width:580px;line-height:1.75;animation:fadeSlideUp 1s ease both 0.7s; }
+    .splash-subtitle span { color:var(--cyan); }
+    .splash-cta { margin-top:2.5rem;display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;animation:fadeSlideUp 1s ease both 0.9s; }
+    .btn-outline { display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 2rem;border-radius:999px;border:1px solid var(--glass-border);color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;letter-spacing:0.1em;text-decoration:none;text-transform:uppercase;transition:all 0.3s;background:var(--glass);backdrop-filter:blur(8px); }
+    .btn-outline:hover { border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 20px rgba(0,229,255,0.15); }
+    .scroll-hint { position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.25em;color:var(--text-muted);text-transform:uppercase;animation:fadeSlideUp 1s ease both 1.3s; }
+    .scroll-hint .scroll-line { width:1px;height:40px;background:linear-gradient(to bottom,var(--cyan),transparent);animation:scrollPulse 2s ease infinite; }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4}50%{opacity:1} }
+    @keyframes fadeSlideUp { from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)} }
+    .orb { position:absolute;border-radius:50%;pointer-events:none;z-index:-1; }
+    .orb-1 { width:600px;height:600px;top:50%;left:50%;transform:translate(-60%,-55%);background:radial-gradient(circle,rgba(0,229,255,0.07) 0%,transparent 70%);animation:orbFloat 6s ease-in-out infinite; }
+    .orb-2 { width:400px;height:400px;top:50%;left:50%;transform:translate(-30%,-45%);background:radial-gradient(circle,rgba(124,58,237,0.07) 0%,transparent 70%);animation:orbFloat 8s ease-in-out infinite reverse; }
+    @keyframes orbFloat { 0%,100%{transform:translate(-60%,-55%) scale(1)}50%{transform:translate(-60%,-50%) scale(1.05)} }
+    .typing-cursor { display:inline-block;width:3px;height:1em;background:var(--cyan);margin-left:2px;vertical-align:middle;animation:blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+    .tag-row { display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-top:1.5rem;animation:fadeSlideUp 1s ease both 1.1s; }
+    .status-badge { display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;border-radius:999px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);font-family:var(--font-mono);font-size:0.7rem;color:#22c55e;margin-bottom:1rem;animation:fadeSlideUp 1s ease both 0.2s; }
+    .status-badge::before { content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:blink 1.5s ease infinite; }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">AK<span>.</span></a>
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="ABOUT.html">About</a></li>
+      <li><a href="publications.html">Research</a></li>
+      <li><a href="contactme.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="splash">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="status-badge">MS AI · Northeastern University · Boston</div>
+    <p class="splash-eyebrow">Wearables · Biomedical AI · Generative Systems</p>
+    <h1 class="splash-title">
+      <span style="color:var(--cyan)">CODING</span><br/>
+      <span class="line-glow">LIFE<span class="typing-cursor"></span></span>
+    </h1>
+    <p class="splash-subtitle">
+      Building <span>intelligent systems</span> at the frontier of<br/>
+      physiological AI, multimodal learning &amp; LLM automation.
+    </p>
+    <div class="tag-row">
+      <span class="tag-chip">PyTorch</span><span class="tag-chip">TensorFlow</span><span class="tag-chip">YOLO</span><span class="tag-chip">OpenCV</span><span class="tag-chip">RAG</span><span class="tag-chip">LangChain</span><span class="tag-chip">n8n</span><span class="tag-chip">Gemini</span><span class="tag-chip">MediaPipe</span><span class="tag-chip">FSL</span>
+    </div>
+    <div class="splash-cta">
+      <a href="Home.html" class="btn-glow">Enter Portfolio</a>
+      <a href="publications.html" class="btn-outline">View Research</a>
+      <a href="resume.pdf" target="_blank" class="btn-outline">Resume ↗</a>
+      <a href="https://scholar.google.com/citations?user=uOQj6L4AAAAJ" target="_blank" rel="noopener" class="btn-outline">Scholar ↗</a>
+    </div>
+    <div class="scroll-hint"><div class="scroll-line"></div>Scroll</div>
+  </div>
+  <script src="global.js"></script>
+  <script src="chat/kb.js"></script>
+  <script src="chat/chat.js"></script>
+</body>
 </html>

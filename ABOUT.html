@@ -1,192 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="ABOUT.css" />
-    <title>ABOUT_AAKASH KUMAR</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="bubbles">
-                <span style="--i: 11"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 21"></span>
-        <span style="--i: 15"></span>
-        <span style="--i: 13"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 5"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 33"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        
- 
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Aakash Kumar</title>
+  <link rel="stylesheet" href="global.css"/>
+  <link rel="stylesheet" href="chat/chat.css"/>
+  <style>
+    .about-wrap { position:relative;z-index:10;max-width:1100px;margin:0 auto;padding:6rem 4rem 4rem; }
+    .about-grid { display:grid;grid-template-columns:1fr 1.6fr;gap:3.5rem;margin-top:3rem;align-items:start; }
+    .info-card { padding:2rem; }
+    .info-row { display:flex;flex-direction:column;padding:0.75rem 0;border-bottom:1px solid var(--glass-border); }
+    .info-row:last-child { border-bottom:none; }
+    .info-label { font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.2em;color:var(--cyan);text-transform:uppercase;margin-bottom:0.3rem; }
+    .info-value { font-size:0.92rem;color:var(--text-primary); }
+    .info-value a { color:var(--cyan);text-decoration:none; }
+    .skills-section { }
+    .skill-group { margin-bottom:2rem; }
+    .skill-group-title { font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.2em;color:var(--cyan);text-transform:uppercase;margin-bottom:1rem; }
+    /* Achievements */
+    .achievement-list { list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem; }
+    .achievement-list li { font-size:0.85rem;color:var(--text-muted);line-height:1.6;padding-left:1.2rem;position:relative; }
+    .achievement-list li::before { content:'★';position:absolute;left:0;color:var(--cyan);font-size:0.7rem; }
+    /* Co-curricular */
+    .cc-card { padding:1.5rem;margin-bottom:1rem; }
+    .cc-title { font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:0.3rem; }
+    .cc-org { font-family:var(--font-mono);font-size:0.7rem;color:var(--cyan);letter-spacing:0.1em;margin-bottom:0.7rem; }
+    .cc-bullets { list-style:none;display:flex;flex-direction:column;gap:0.4rem; }
+    .cc-bullets li { font-size:0.82rem;color:var(--text-muted);line-height:1.6;padding-left:1rem;position:relative; }
+    .cc-bullets li::before { content:'›';position:absolute;left:0;color:var(--cyan); }
+    @media(max-width:768px){ .about-wrap{padding:4rem 1.5rem 2rem} .about-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">AK<span>.</span></a>
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="ABOUT.html" class="active">About</a></li>
+      <li><a href="publications.html">Research</a></li>
+      <li><a href="contactme.html">Contact</a></li>
+    </ul>
+  </nav>
 
+  <div class="page-content">
+    <div class="about-wrap">
+      <p class="section-eyebrow reveal">// profile.json</p>
+      <h1 class="section-heading reveal">About <span>Me</span></h1>
+
+      <div class="about-grid">
+        <!-- Left column -->
+        <div>
+          <div class="glass-card info-card reveal">
+            <div class="info-row"><span class="info-label">Name</span><span class="info-value">Aakash Kumar</span></div>
+            <div class="info-row"><span class="info-label">Date of Birth</span><span class="info-value">29 · 04 · 2003</span></div>
+            <div class="info-row"><span class="info-label">Origin</span><span class="info-value">Indian 🇮🇳</span></div>
+            <div class="info-row"><span class="info-label">Location</span><span class="info-value">Boston, MA 🇺🇸</span></div>
+            <div class="info-row"><span class="info-label">Phone (US)</span><span class="info-value">+1 617-595-0332</span></div>
+            <div class="info-row"><span class="info-label">Phone (IN)</span><span class="info-value">+91 9047077718</span></div>
+            <div class="info-row"><span class="info-label">Email</span><span class="info-value"><a href="mailto:aakash.abudhabi@gmail.com">aakash.abudhabi@gmail.com</a></span></div>
+            <div class="info-row"><span class="info-label">Status</span><span class="info-value">Single · Driving Licence (Worldwide)</span></div>
+          </div>
+
+          <div class="reveal" style="margin-top:2rem">
+            <p class="section-eyebrow" style="margin-bottom:1.2rem">Education</p>
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="timeline-year">2026 — Present</p>
+                <p class="timeline-title">MS in Artificial Intelligence</p>
+                <p class="timeline-sub">Northeastern University, Boston, MA</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-year">2021 — 2025</p>
+                <p class="timeline-title">B.Tech CS & Engineering (AI & ML)</p>
+                <p class="timeline-sub">VIT Chennai, India — CGPA 9.35/10</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-year">2019 — 2021</p>
+                <p class="timeline-title">Secondary Education</p>
+                <p class="timeline-sub">EFIA, Abu Dhabi, UAE</p>
+              </div>
+              <div class="timeline-item">
+                <p class="timeline-year">2012 — 2019</p>
+                <p class="timeline-title">Primary Education</p>
+                <p class="timeline-sub">EFIA, Abu Dhabi, UAE</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal" style="margin-top:2.5rem">
+            <p class="section-eyebrow" style="margin-bottom:1rem">Certifications</p>
+            <div style="display:flex;flex-direction:column;gap:0.6rem">
+              <div style="padding:0.8rem 1rem;border:1px solid var(--glass-border);border-radius:10px;background:var(--glass)">
+                <p style="font-size:0.85rem;color:var(--text-primary);font-weight:500">Advanced C++ Programming</p>
+                <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--cyan)">IIT Bombay · 2022</p>
+              </div>
+              <div style="padding:0.8rem 1rem;border:1px solid var(--glass-border);border-radius:10px;background:var(--glass)">
+                <p style="font-size:0.85rem;color:var(--text-primary);font-weight:500">Python Programming (v3.4.3)</p>
+                <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--cyan)">IIT Bombay · 2022</p>
+              </div>
+              <div style="padding:0.8rem 1rem;border:1px solid var(--glass-border);border-radius:10px;background:var(--glass)">
+                <p style="font-size:0.85rem;color:var(--text-primary);font-weight:500">E-Business — Top 1%</p>
+                <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--cyan)">NPTEL · 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div>
+          <div class="skills-section">
+            <div class="skill-group reveal">
+              <p class="skill-group-title">Programming Languages</p>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Python</span><span>95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="95%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>C / C++</span><span>72%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="72%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Java</span><span>65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>SQL</span><span>78%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="78%"></div></div></div>
+            </div>
+            <div class="skill-group reveal">
+              <p class="skill-group-title">AI / ML Frameworks</p>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>TensorFlow / Keras</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>OpenCV / YOLO</span><span>88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>DenseNet / VGG / ResNet</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Whisper (ASR)</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div></div>
+            </div>
+            <div class="skill-group reveal">
+              <p class="skill-group-title">LLMs & Automation</p>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>OpenAI API / Gemini</span><span>88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>RAG / LangChain</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>n8n Automation</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Prompt Engineering</span><span>87%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="87%"></div></div></div>
+            </div>
+            <div class="skill-group reveal">
+              <p class="skill-group-title">Languages Known</p>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>English</span><span>92%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="92%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Telugu</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Hindi</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Tamil</span><span>70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70%"></div></div></div>
+              <div class="skill-bar-container"><div class="skill-bar-label"><span>Arabic</span><span>55%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="55%"></div></div></div>
+            </div>
+            <div class="reveal">
+              <p class="skill-group-title">Full Toolkit</p>
+              <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem">
+                <span class="tag-chip">PyTorch</span><span class="tag-chip">TensorFlow</span><span class="tag-chip">Scikit-learn</span><span class="tag-chip">Hugging Face</span><span class="tag-chip">Transformers</span><span class="tag-chip">LangGraph</span><span class="tag-chip">LangChain</span><span class="tag-chip">Pydantic AI</span><span class="tag-chip">LangSmith</span><span class="tag-chip">GraphRAG</span><span class="tag-chip">Pinecone</span><span class="tag-chip">ChromaDB</span><span class="tag-chip">Neo4j</span><span class="tag-chip">QLoRA / LoRA</span><span class="tag-chip">FastAPI</span><span class="tag-chip">Docker</span><span class="tag-chip">CI/CD</span><span class="tag-chip">MCP</span><span class="tag-chip">Azure ML</span><span class="tag-chip">Databricks</span><span class="tag-chip">GCP</span><span class="tag-chip">PostgreSQL</span><span class="tag-chip">n8n</span><span class="tag-chip">MediaPipe</span><span class="tag-chip">FSL</span><span class="tag-chip">Pandas</span><span class="tag-chip">NumPy</span><span class="tag-chip">Git</span><span class="tag-chip">Claude Code</span><span class="tag-chip">Cursor</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    <h1>ABOUT <span style="color: aqua">ME</span></h1>
 
-    <div class="names">
-      <h4><span style="color: aqua">NAME:-</span> Aakash kumar</h4>
-      <h4>
-        <span style="color: aqua">Started breathing since:-</span>29-04-2003
-      </h4>
-      <h4><span style="color: aqua">Origin:-</span> INDIAN</h4>
-      <h4><span style="color: aqua">Martial status:-</span> Single</h4>
-      <h4><span style="color: aqua">Driving licence:-</span> World wide</h4>
-      <h4>
-        <span style="color: aqua">Languages known:-</span>
-
-        <div class="skill">
-          <li>
-            <h3>English</h3>
-            <span class="bar"><span class="English"></span></span>
-          </li>
-          <li>
-            <h3>Telugu</h3>
-            <span class="bar"><span class="Telugu"></span></span>
-          </li>
-          <li>
-            <h3>Tamil</h3>
-            <span class="bar"><span class="Tamil"></span></span>
-          </li>
-          <li>
-            <h3>Hindi</h3>
-            <span class="bar"><span class="Hindi"></span></span>
-          </li>
-          <li>
-            <h3>Arabic</h3>
-            <span class="bar"><span class="Arabic"></span></span>
-          </li>
-          <li>
-            <h3>Malayalam</h3>
-            <span class="bar"><span class="Malayalam"></span></span>
-          </li>
+      <!-- Achievements -->
+      <div style="margin-top:4rem">
+        <p class="section-eyebrow reveal">Recognition</p>
+        <h2 class="section-heading reveal" style="font-size:2rem">Achievements <span>&amp; Awards</span></h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1.5rem">
+          <div class="glass-card reveal" style="padding:1.5rem">
+            <ul class="achievement-list">
+              <li>Protothon 8.0 Winner — Cross-University Research Discovery Platform (Luminary)</li>
+              <li>Top-Performing Science Student distinction at school level</li>
+              <li>Ranked Top 4 in 12th Grade Board Examinations</li>
+              <li>Head Prefect — Secondary School Discipline Committee</li>
+            </ul>
+          </div>
+          <div class="glass-card reveal" style="padding:1.5rem">
+            <ul class="achievement-list">
+              <li>President, Robotics Club — VIT Chennai (400+ members, 7+ departments)</li>
+              <li>Top 1% NPTEL Certification — E-Business</li>
+              <li>Resource Person — Online International Short-Term Training Program (Scholar's Gate)</li>
+              <li>10 publications across IEEE, Elsevier, Springer, and CRC Press, plus a patent</li>
+            </ul>
+          </div>
         </div>
-      </h4>
-      <h4>
-        <span style="color: aqua">Coding Languages known:-</span>
+      </div>
 
-        <div class="skill">
-          <h1></h1>
-          <li>
-            <h3>HTML</h3>
-            <span class="bar"><span class="html"></span></span>
-          </li>
-          <li>
-            <h3>CSS</h3>
-            <span class="bar"><span class="css"></span></span>
-          </li>
-          <li>
-            <h3>PYTHON</h3>
-            <span class="bar"><span class="python"></span></span>
-          </li>
-          <li>
-            <h3>MYSQL</h3>
-            <span class="bar"><span class="mysql"></span></span>
-          </li>
-          <li>
-            <h3>C</h3>
-            <span class="bar"><span class="c"></span></span>
-          </li>
-          <li>
-            <h3>C++</h3>
-            <span class="bar"><span class="cpp"></span></span>
-          </li>
-          <li>
-            <h3>Scratch</h3>
-            <span class="bar"><span class="scratch"></span></span>
-          </li>
+      <!-- Co-curricular -->
+      <div style="margin-top:4rem">
+        <p class="section-eyebrow reveal">Leadership</p>
+        <h2 class="section-heading reveal" style="font-size:2rem">Co-Curricular <span>Activities</span></h2>
+        <div class="glass-card cc-card reveal">
+          <p class="cc-title">President, Robotics Club</p>
+          <p class="cc-org">VIT Chennai</p>
+          <ul class="cc-bullets">
+            <li>Led a student org of 400+ members structured across 7+ departments including Teaching, Technical, Outreach, Marketing, and Operations.</li>
+            <li>Planned, organized, and executed seminars, workshops, and training programs — mentoring 120+ students per session.</li>
+          </ul>
         </div>
-      </h4>
+        <div class="glass-card cc-card reveal">
+          <p class="cc-title">Head Prefect — Discipline Committee</p>
+          <p class="cc-org">EFIA Secondary School, Abu Dhabi</p>
+          <ul class="cc-bullets">
+            <li>Headed the Discipline Committee ensuring order across academic and extracurricular activities.</li>
+            <li>Primary liaison between school administration and the student body.</li>
+          </ul>
+        </div>
+        <div class="glass-card cc-card reveal">
+          <p class="cc-title">Resource Person</p>
+          <p class="cc-org">Scholar's Gate — International Training Program</p>
+          <ul class="cc-bullets">
+            <li>Delivered technical sessions to PhD scholars and working professionals on Deep Learning for professional workflows.</li>
+            <li>Received positive feedback for simplifying complex AI concepts into actionable, real-world solutions.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <h4>        <span style="color: aqua">Skills:-</span>
-
-        <div class="skill">
-          <h1></h1>
-          <li>
-            <h3>Time management</h3>
-            <span class="bar"><span class="Time_management"></span>
-          </li>
-          <li>
-            <h3>Team work</h3>
-            <span class="bar"><span class="Team_work"></span>
-          </li>
-          <li>
-            <h3>Working under pressure</h3>
-            <span class="bar"><span class="Working"></span>
-          </li>
-
-        </div>
-      </h4>
-      <h4 style="color: aqua;">Education:-</h1>
-      <section class="timeline-area">
-  <div class="education">
-    <h2>Btech Graduate</h2>
-    <h3>VIT,chennai,India</h3>
-    <h4>2021-2025</h4>
-    
   </div>
-  <div class="education">
-    <h2>Secondary education</h2>
-    <h3>EFIA,Abudhabi,UAE</h3>
-    <h4 >2019-2021</h4>
 
-  </div>
-  <div class="education">
-    <h2>Primary education</h2>
-    <h3>EFIA,Abudhabi,UAE</h3>
-    <h4>2012-2019</h4>
-
-  </div>
-</section>
-
-  </body>
+  <footer class="site-footer">
+    <span>© 2026 Aakash Kumar</span>
+    <span class="foot-links"><a href="https://linkedin.com/in/aakash-kumar-1a273311a" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/aakash-2904" target="_blank" rel="noopener">GitHub</a> · <a href="https://scholar.google.com/citations?user=uOQj6L4AAAAJ" target="_blank" rel="noopener">Scholar</a></span>
+    <a href="contactme.html">Hire Me →</a>
+  </footer>
+  <script src="global.js"></script>
+  <script src="chat/kb.js"></script>
+  <script src="chat/chat.js"></script>
+</body>
 </html>

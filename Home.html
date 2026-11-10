@@ -1,94 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style01.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,500;1,200;1,300;1,
-400&family=Yesteryear&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="ABOUT.html" />
-    <link rel="stylesheet" href="contactme.html" />
-    <title>Aakash</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="bubbles">
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 21"></span>
-        <span style="--i: 15"></span>
-        <span style="--i: 13"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 5"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 33"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 11"></span>
-        <span style="--i: 12"></span>
-        <span style="--i: 24"></span>
-        <span style="--i: 10"></span>
-        <span style="--i: 14"></span>
-        <span style="--i: 23"></span>
-        <span style="--i: 18"></span>
-        <span style="--i: 16"></span>
-        <span style="--i: 19"></span>
-        <span style="--i: 20"></span>
-        <span style="--i: 22"></span>
-        <span style="--i: 25"></span>
-        <span style="--i: 18"></span>
-      </div>
-    <div class="intro">
-      <nav>
-        <h2 class="starting" style="text-transform: uppercase">
-          welcome <span id="inside">to</span> my notebook
-        </h2>
-        <ul>
-          <li><a href="mywebsite.html" id="links1">Home</a></li>
-          <li><a href="ABOUT.html" id="links1">About Me</a></li>
-          <li><a href="publications.html" id="links1">Publications</a></li>
-          <li><a href="contactme.html" id="links1">Contact Me</a></li>
-        </ul>
-      </nav>
-    </div>
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aakash Kumar — Home</title>
+  <link rel="stylesheet" href="global.css"/>
+  <link rel="stylesheet" href="chat/chat.css"/>
+  <style>
+    .hero { position:relative;z-index:10;min-height:calc(100vh - 90px);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:5rem 4rem 3rem;max-width:1200px;margin:0 auto; }
+    .hero-left { display:flex;flex-direction:column;gap:1.2rem; }
+    .greeting { font-family:var(--font-mono);font-size:0.82rem;letter-spacing:0.2em;color:var(--cyan);text-transform:uppercase; }
+    .hero-name { font-family:var(--font-display);font-size:clamp(2.2rem,5.5vw,4.5rem);font-weight:800;line-height:1.0;color:var(--text-primary); }
+    .hero-name .name-highlight { background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .hero-role { font-family:var(--font-mono);font-size:1rem;color:var(--text-muted); }
+    .hero-role .role-cycle { color:var(--cyan);transition:opacity 0.4s,transform 0.4s;display:inline-block; }
+    .hero-desc { font-size:0.95rem;color:var(--text-muted);line-height:1.8;max-width:460px; }
+    .hero-actions { display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem; }
+    .btn-outline-sm { display:inline-flex;align-items:center;gap:0.4rem;padding:0.7rem 1.6rem;border-radius:999px;border:1px solid var(--glass-border);color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.1em;text-decoration:none;text-transform:uppercase;transition:all 0.3s;background:var(--glass);backdrop-filter:blur(8px); }
+    .btn-outline-sm:hover { border-color:var(--cyan);color:var(--cyan); }
+    .stat-row { display:flex;gap:2rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--glass-border);flex-wrap:wrap; }
+    .stat-item { display:flex;flex-direction:column;gap:0.2rem; }
+    .stat-num { font-family:var(--font-display);font-size:1.8rem;font-weight:800;color:var(--cyan);line-height:1; }
+    .stat-label { font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;color:var(--text-muted);text-transform:uppercase; }
+    /* Avatar card */
+    .hero-right { display:flex;justify-content:center;align-items:center; }
+    .avatar-card { position:relative;width:320px;height:380px;background:var(--glass);border:1px solid var(--glass-border);border-radius:24px;backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden; }
+    .avatar-card::before { content:'';position:absolute;inset:-2px;border-radius:26px;background:linear-gradient(135deg,var(--cyan),var(--violet),var(--pink),var(--cyan));background-size:300% 300%;z-index:-1;animation:borderGlow 4s ease infinite;opacity:0.55; }
+    @keyframes borderGlow { 0%,100%{background-position:0% 50%}50%{background-position:100% 50%} }
+    .avatar-img-wrap { width:170px;height:170px;border-radius:50%;overflow:hidden;border:3px solid rgba(0,229,255,0.6);box-shadow:0 0 30px rgba(0,229,255,0.4);animation:avatarFloat 4s ease-in-out infinite; }
+    .avatar-img-wrap img { width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.1) translateY(5%); }
+    @keyframes avatarFloat { 0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)} }
+    .avatar-name { font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--text-primary);margin-top:1rem; }
+    .avatar-title { font-family:var(--font-mono);font-size:0.72rem;color:var(--cyan);letter-spacing:0.15em;margin-top:0.3rem;text-align:center;padding:0 1rem; }
+    .avatar-badges { display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin-top:0.8rem;padding:0 1.2rem; }
+    .pulse-ring { position:absolute;border-radius:50%;border:1px solid rgba(0,229,255,0.18);animation:pulseRing 3s ease infinite; }
+    .pulse-ring:nth-child(1){width:210px;height:210px;animation-delay:0s}
+    .pulse-ring:nth-child(2){width:270px;height:270px;animation-delay:1s}
+    .pulse-ring:nth-child(3){width:330px;height:330px;animation-delay:2s}
+    @keyframes pulseRing { 0%{opacity:0.5;transform:scale(0.95)}100%{opacity:0;transform:scale(1.18)} }
+    /* Sections */
+    .section { position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:4rem 4rem; }
+    .highlights-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2.5rem; }
+    .highlight-card { padding:1.8rem; }
+    .hc-icon { font-size:1.8rem;margin-bottom:0.8rem; }
+    .hc-title { font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem; }
+    .hc-desc { font-size:0.85rem;color:var(--text-muted);line-height:1.7; }
+    /* Experience */
+    .exp-item { padding:1.8rem;margin-bottom:1.5rem; }
+    .exp-header { display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem;flex-wrap:wrap;gap:0.5rem; }
+    .exp-title { font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text-primary); }
+    .exp-company { font-family:var(--font-mono);font-size:0.75rem;color:var(--cyan);letter-spacing:0.1em; }
+    .exp-date { font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;white-space:nowrap; }
+    .exp-bullets { list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem; }
+    .exp-bullets li { font-size:0.84rem;color:var(--text-muted);line-height:1.65;padding-left:1rem;position:relative; }
+    .exp-bullets li::before { content:'›';position:absolute;left:0;color:var(--cyan); }
+    @media(max-width:768px){ .hero{grid-template-columns:1fr;padding:3rem 1.5rem 2rem} .hero-right{order:-1} .avatar-card{width:260px;height:300px} .section{padding:3rem 1.5rem} }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <a href="index.html" class="logo">AK<span>.</span></a>
+    <ul>
+      <li><a href="Home.html" class="active">Home</a></li>
+      <li><a href="ABOUT.html">About</a></li>
+      <li><a href="publications.html">Research</a></li>
+      <li><a href="contactme.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="me">
-      <h5>Hello there !</h5>
-      <h1>I'm <span class="middle">Aakash kumar</span></h1>
-      <h3>a coding enthusiast</h3>
-    </div>
-    
-  </body>
+  <div class="page-content">
+    <section class="hero">
+      <div class="hero-left reveal">
+        <p class="greeting">// Hello World</p>
+        <h1 class="hero-name">I'm <span class="name-highlight">Aakash Kumar</span></h1>
+        <p class="hero-role">a <span class="role-cycle" id="role-text">coding enthusiast</span></p>
+        <p class="hero-desc">MS in AI at Northeastern University, Boston. I build intelligent systems at the intersection of physiological sensing, biomedical deep learning, and LLM automation. 10 publications across IEEE, Elsevier, Springer, and CRC Press, plus a patent.</p>
+        <div class="hero-actions">
+          <a href="ABOUT.html" class="btn-glow">About Me</a>
+          <a href="publications.html" class="btn-outline-sm">Research →</a>
+          <a href="resume.pdf" target="_blank" class="btn-outline-sm">Resume ↗</a>
+          <a href="https://scholar.google.com/citations?user=uOQj6L4AAAAJ" target="_blank" rel="noopener" class="btn-outline-sm">Scholar ↗</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat-item"><span class="stat-num">10</span><span class="stat-label">Publications</span></div>
+          <div class="stat-item"><span class="stat-num">1</span><span class="stat-label">Patent</span></div>
+          <div class="stat-item"><span class="stat-num">9.35</span><span class="stat-label">CGPA / 10</span></div>
+          <div class="stat-item"><span class="stat-num">NEU</span><span class="stat-label">MS AI '26</span></div>
+        </div>
+      </div>
+
+      <div class="hero-right reveal">
+        <div class="avatar-card">
+          <div class="pulse-ring"></div><div class="pulse-ring"></div><div class="pulse-ring"></div>
+          <div class="avatar-img-wrap">
+            <img src="avatar.png" alt="Aakash Kumar"/>
+          </div>
+          <p class="avatar-name">Aakash Kumar</p>
+          <p class="avatar-title">MS AI · Northeastern University, Boston</p>
+          <div class="avatar-badges">
+            <span class="tag-chip">Boston, MA</span>
+            <span class="tag-chip">B.Tech VIT 9.35</span>
+            <span class="tag-chip">10 Papers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-eyebrow reveal">What I Do</p>
+      <h2 class="section-heading reveal">Areas of <span>Expertise</span></h2>
+      <div class="highlights-grid">
+        <div class="glass-card highlight-card reveal">
+          <div class="hc-icon">🧠</div>
+          <h3 class="hc-title">Physiological AI</h3>
+          <p class="hc-desc">Working with ECG, PPG, and fMRI time-series. Building sequential and multimodal models for health monitoring, stress detection, and clinical decision support.</p>
+        </div>
+        <div class="glass-card highlight-card reveal">
+          <div class="hc-icon">🤖</div>
+          <h3 class="hc-title">LLM Automation & RAG</h3>
+          <p class="hc-desc">Built 15+ AI automation workflows with n8n, RAG pipelines using OpenAI + Gemini, 200K-vector Pinecone indexes, and multi-agent systems for real-world deployment.</p>
+        </div>
+        <div class="glass-card highlight-card reveal">
+          <div class="hc-icon">🌿</div>
+          <h3 class="hc-title">Computer Vision</h3>
+          <p class="hc-desc">YOLOv11 for mango detection (mAP 0.91), plant disease classification, yoga posture estimation via MediaPipe, concrete crack detection with OpenCV.</p>
+        </div>
+        <div class="glass-card highlight-card reveal">
+          <div class="hc-icon">🫁</div>
+          <h3 class="hc-title">Biomedical Deep Learning</h3>
+          <p class="hc-desc">Multi-modal brain fusion, epilepsy FCD segmentation (Dice 0.87), ovarian cancer classification, diabetes prediction — published in Elsevier & Springer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-eyebrow reveal">Experience</p>
+      <h2 class="section-heading reveal">Professional <span>Work</span></h2>
+
+      <div class="glass-card exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-title">AI Automation Intern</p>
+            <p class="exp-company">Divine Success Flow</p>
+          </div>
+          <span class="exp-date">Sep – Dec 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built 15+ end-to-end AI automation workflows using n8n, integrating Telegram, WhatsApp CRM, Pinecone, processing 500–2,000 records per run with under 8-second latency.</li>
+          <li>Deployed LLM agents and RAG pipelines (OpenAI Agent Builder + Gemini) for lead generation and CRM automation, achieving 90%+ lead qualification accuracy over a 200K-vector Pinecone index with sub-50ms retrieval.</li>
+          <li>Automated scraping (1,000+ records/hour), Whisper transcription (~15 sec/audio-min), text-to-speech, and content workflows, reducing manual effort ~70% across 5 client-facing pipelines.</li>
+        </ul>
+        <div style="margin-top:0.8rem;display:flex;gap:0.4rem;flex-wrap:wrap"><span class="tag-chip">n8n</span><span class="tag-chip">OpenAI</span><span class="tag-chip">Gemini</span><span class="tag-chip">Pinecone</span><span class="tag-chip">RAG</span><span class="tag-chip">Whisper</span></div>
+      </div>
+
+      <div class="glass-card exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-title">AI Intern</p>
+            <p class="exp-company">Modern Agriculture Technology Innovation Center</p>
+          </div>
+          <span class="exp-date">Jan – May 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built a mobile app for farm-yield prediction delivering end-to-end inference in under 400ms for real-time field use.</li>
+          <li>Collected and annotated 3,000+ farm-field images with bounding boxes across 4 ripeness classes, expanded to 8,000+ via augmentation (flip, rotate, brightness, crop).</li>
+          <li>Applied YOLOv11n (mAP@0.5: 0.91, ~6 MB) for mango detection and DenseNet121 for ripeness classification (~92% accuracy, 0.92 F1, sub-50ms on-device).</li>
+        </ul>
+        <div style="margin-top:0.8rem;display:flex;gap:0.4rem;flex-wrap:wrap"><span class="tag-chip">YOLOv11</span><span class="tag-chip">DenseNet121</span><span class="tag-chip">Python</span><span class="tag-chip">Mobile</span></div>
+      </div>
+
+      <div class="glass-card exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-title">Academic Support Intern &amp; CS Instructor</p>
+            <p class="exp-company">Akash EM High School</p>
+          </div>
+          <span class="exp-date">2024 – 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed student attendance systems and automated WhatsApp notifications for absences and fee updates, improving school–parent communication.</li>
+          <li>Prepared and formatted academic materials, including question papers and syllabus documentation.</li>
+          <li>Taught Python and HTML to primary students through interactive sessions.</li>
+        </ul>
+        <div style="margin-top:0.8rem;display:flex;gap:0.4rem;flex-wrap:wrap"><span class="tag-chip">Python</span><span class="tag-chip">HTML</span><span class="tag-chip">Automation</span><span class="tag-chip">Teaching</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-eyebrow reveal">Teaching</p>
+      <h2 class="section-heading reveal">Teaching <span>Assistantships</span></h2>
+      <div class="glass-card exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-title">Teaching Assistant · Responsible AI (PHIL 5110)</p>
+            <p class="exp-company">Northeastern University</p>
+          </div>
+          <span class="exp-date">Fall A 2026</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Graded and gave rubric-based feedback for 90+ students across recurring “Responsible AI in the Wild” essays and reflective exit tickets, calibrated against instructor benchmarks.</li>
+          <li>Flagged conceptual gaps, academic integrity concerns and conflicts of interest, escalating nuanced cases to faculty.</li>
+          <li>Resolved grade inquiries with evidence-based explanations and kept roster-aligned, per-criterion gradebooks.</li>
+        </ul>
+        <div style="margin-top:0.8rem;display:flex;gap:0.4rem;flex-wrap:wrap"><span class="tag-chip">Responsible AI</span><span class="tag-chip">Grading</span><span class="tag-chip">Feedback</span></div>
+      </div>
+      <div class="glass-card exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-title">Teaching Assistant · AI in Healthcare (HLTH 5800)</p>
+            <p class="exp-company">Northeastern University</p>
+          </div>
+          <span class="exp-date">Summer B 2026</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Graded 45+ students across 7 modules on AI applications, algorithmic bias, HIPAA / GDPR compliance and CHAI-standard model cards.</li>
+          <li>Evaluated discussions against a multi-criterion rubric with individualized feedback.</li>
+          <li>Handled student communications via HelpScout and email and flagged integrity concerns to faculty.</li>
+        </ul>
+        <div style="margin-top:0.8rem;display:flex;gap:0.4rem;flex-wrap:wrap"><span class="tag-chip">Healthcare AI</span><span class="tag-chip">HIPAA / GDPR</span><span class="tag-chip">Model Cards</span></div>
+      </div>
+      <div class="glass-card exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-title">Teaching Assistant · Workplace Skills in Action (EEBA 6410)</p>
+            <p class="exp-company">Northeastern University</p>
+          </div>
+          <span class="exp-date">Summer A 2026</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Supported graduate students with course concepts, doubts and practical workplace competencies.</li>
+          <li>Kept an approachable environment that encouraged participation and early questions.</li>
+        </ul>
+        <div style="margin-top:0.8rem;display:flex;gap:0.4rem;flex-wrap:wrap"><span class="tag-chip">Graduate</span><span class="tag-chip">Mentoring</span></div>
+      </div>
+      <div class="glass-card exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-title">Teaching Assistant · Negotiations (MGMT 6214)</p>
+            <p class="exp-company">Northeastern University</p>
+          </div>
+          <span class="exp-date">Spring 2026</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Stepped in mid-semester for the final three weeks, quickly orienting to course material and student needs.</li>
+          <li>Supported students with content and assignment guidance.</li>
+        </ul>
+        <div style="margin-top:0.8rem;display:flex;gap:0.4rem;flex-wrap:wrap"><span class="tag-chip">Graduate</span><span class="tag-chip">Adaptability</span></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <span>© 2026 Aakash Kumar · aakash.abudhabi@gmail.com · +1 617-595-0332</span>
+    <span class="foot-links"><a href="https://linkedin.com/in/aakash-kumar-1a273311a" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/aakash-2904" target="_blank" rel="noopener">GitHub</a> · <a href="https://scholar.google.com/citations?user=uOQj6L4AAAAJ" target="_blank" rel="noopener">Scholar</a></span>
+    <a href="contactme.html">Hire Me →</a>
+  </footer>
+
+  <script src="global.js"></script>
+  <script src="chat/kb.js"></script>
+  <script src="chat/chat.js"></script>
+  <script>
+    const roles = ['coding enthusiast','AI researcher','DL engineer','physiological AI builder','published author','Northeastern MS student'];
+    let ri = 0;
+    const el = document.getElementById('role-text');
+    el.style.transition = 'opacity 0.4s,transform 0.4s';
+    setInterval(() => {
+      el.style.opacity='0'; el.style.transform='translateY(-8px)';
+      setTimeout(() => {
+        ri=(ri+1)%roles.length; el.textContent=roles[ri];
+        el.style.transition='none'; el.style.transform='translateY(8px)';
+        setTimeout(() => { el.style.transition='opacity 0.4s,transform 0.4s'; el.style.opacity='1'; el.style.transform='translateY(0)'; }, 20);
+      }, 300);
+    }, 2600);
+  </script>
+</body>
 </html>

@@ -1,0 +1,51 @@
+/* ===== "Ask about Aakash" chat widget ===== */
+.akc-launch{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:9000;display:flex;align-items:center;gap:.6rem;padding:.45rem 1.1rem .45rem .45rem;border-radius:999px;border:1px solid rgba(0,229,255,.45);background:rgba(6,14,30,.92);backdrop-filter:blur(14px);color:#F2F6FD;font:600 .9rem var(--font-body,system-ui);cursor:pointer !important;box-shadow:0 0 24px rgba(0,229,255,.25)}
+.akc-launch img{width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--cyan,#00e5ff)}
+.akc-launch:hover{border-color:var(--cyan,#00e5ff);box-shadow:0 0 34px rgba(0,229,255,.45)}
+.akc-launch[hidden]{display:none}
+
+.akc{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:9001;width:min(400px,calc(100vw - 24px));height:min(600px,calc(100dvh - 110px));display:flex;flex-direction:column;border-radius:18px;border:1px solid rgba(0,229,255,.35);background:rgba(4,10,22,.96);backdrop-filter:blur(18px);box-shadow:0 20px 70px rgba(0,0,0,.6),0 0 40px rgba(0,229,255,.12);overflow:hidden;color:#F2F6FD;font-family:var(--font-body,system-ui)}
+.akc[hidden]{display:none}
+.akc,.akc *{cursor:auto !important}
+.akc button,.akc a{cursor:pointer !important}
+.akc *{text-shadow:none !important}
+
+.akc-head{display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem;border-bottom:1px solid rgba(0,229,255,.18);background:linear-gradient(90deg,rgba(0,229,255,.08),rgba(167,139,250,.08))}
+.akc-head img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--cyan,#00e5ff)}
+.akc-head b{display:block;font:700 1rem var(--font-display,system-ui)}
+.akc-head small{color:#B4C0D6;font-size:.78rem}
+.akc-mode{margin-left:auto;font:500 .7rem var(--font-mono,monospace);color:#8FF3FF;border:1px solid rgba(0,229,255,.35);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.akc-close{background:none;border:0;color:#B4C0D6;font-size:1.5rem;line-height:1;padding:.2rem .4rem;border-radius:6px}
+.akc-close:hover{color:#fff}
+
+.akc-log{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.75rem;scroll-behavior:smooth}
+.akc-msg{max-width:88%;padding:.65rem .9rem;border-radius:14px;font-size:.92rem;line-height:1.55;white-space:pre-wrap;word-wrap:break-word}
+.akc-msg.bot{align-self:flex-start;background:rgba(20,32,56,.95);border:1px solid rgba(0,229,255,.16);border-bottom-left-radius:4px}
+.akc-msg.me{align-self:flex-end;background:linear-gradient(135deg,#00c6e0,#8b7af0);color:#04101c;font-weight:500;border-bottom-right-radius:4px}
+.akc-msg a{color:#8FF3FF}
+.akc-src{display:block;margin-top:.45rem;font:500 .72rem var(--font-mono,monospace);color:#8796B2}
+.akc-src a{color:#8FF3FF;text-decoration:none}
+.akc-typing{display:inline-flex;gap:4px}
+.akc-typing i{width:6px;height:6px;border-radius:50%;background:#8FF3FF;animation:akcDot 1s infinite ease-in-out}
+.akc-typing i:nth-child(2){animation-delay:.15s}.akc-typing i:nth-child(3){animation-delay:.3s}
+@keyframes akcDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+
+.akc-sugs{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 1rem .7rem}
+.akc-sugs button{font:500 .78rem var(--font-body,system-ui);color:#8FF3FF;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);border-radius:999px;padding:.3rem .7rem}
+.akc-sugs button:hover{background:rgba(0,229,255,.2)}
+
+.akc-form{display:flex;gap:.5rem;padding:.75rem;border-top:1px solid rgba(0,229,255,.18)}
+.akc-form input{flex:1;min-width:0;background:rgba(14,24,44,.95);border:1px solid rgba(0,229,255,.25);border-radius:10px;padding:.65rem .8rem;color:#F2F6FD;font:400 .92rem var(--font-body,system-ui);outline:none}
+.akc-form input::placeholder{color:#8796B2}
+.akc-form input:focus{border-color:var(--cyan,#00e5ff)}
+.akc-form button{border:0;border-radius:10px;padding:0 1rem;font:700 .85rem var(--font-body,system-ui);color:#04101c;background:linear-gradient(135deg,#00e5ff,#a78bfa)}
+.akc-form button:disabled{opacity:.5}
+.akc-note{padding:0 1rem .6rem;font-size:.7rem;color:#8796B2}
+
+@media (max-width:520px){
+  .akc{right:12px;left:12px;width:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));height:min(78dvh,620px)}
+  .akc-launch{right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  .akc-launch span{display:none}
+  .akc-launch{padding:.4rem}
+}
+@media (prefers-reduced-motion:reduce){.akc-typing i{animation:none}.akc-log{scroll-behavior:auto}}
